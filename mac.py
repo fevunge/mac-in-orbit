@@ -4,32 +4,8 @@ Put your key candidate into KEY_CANDIDATE at the bottom and run this file to
 check it against the intercepted pair.
 """
 
-ALLOWED_CHARS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-!?. "
-
-
-def string_to_code(text):
-    """Turn a string into the list of its character indices, "a" -> 0, " " -> 67."""
-    if type(text) is not str:
-        raise TypeError("Input is not a string")
-
-    code = []
-    for char in text:
-        if char not in ALLOWED_CHARS:
-            raise ValueError(f'Character "{char}" in {text} is not allowed')
-        code += [ALLOWED_CHARS.index(char)]
-
-    return code
-
-
-def code_to_string(code):
-    """Turn a list of character indices back into a string."""
-    if not all(isinstance(i, int) for i in code):
-        raise TypeError("A code must be a list of integers")
-
-    try:
-        return "".join([ALLOWED_CHARS[i] for i in code])
-    except IndexError:
-        raise ValueError("The code contains an invalid index")
+from code_and_decode import string_to_code
+from consts import INTERCEPTED_COMMAND, INTERCEPTED_TAG, KEY_CANDIDATE
 
 
 def mac(text, key):
@@ -68,15 +44,6 @@ def check_mac(text, key, tag):
     return mac(text, key) == tag
 
 
-INTERCEPTED_COMMAND = "SONNENSEGEL-AUSFAHREN-869230"
-INTERCEPTED_TAG = [
-    496, 248, 2060, 1055, 1408, 989, 1178, 2264, 904, 832, 1819, 1218, 2432,
-    11944, 5572, 758, 664, 2177, 709, 392, 837, 1768, 3420, 3484, 3538, 3666,
-    6856, 12592,
-]
-
-KEY_CANDIDATE = "put your key here"
-
 if __name__ == "__main__":
     command = "ENERGIESPARMODUS-EIN-123456"
     key = "Geheim123-456"
@@ -97,8 +64,3 @@ if __name__ == "__main__":
         print("The key is correct.")
     else:
         print("The key is wrong.")
-
-
-
-
-
