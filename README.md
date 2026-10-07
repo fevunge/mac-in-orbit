@@ -27,7 +27,7 @@ This challenge implements a custom MAC algorithm that combines:
 - Mathematical operations between consecutive elements;  
 - Analysis of a known plaintext and known tag to recover the secret key 
 
-This repository is intentionally generic. Replace placeholders and keep only the sections/files that match your generated project.
+![](./assets/MAC.svg)
 
 ### Goals
 
