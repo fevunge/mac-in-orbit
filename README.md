@@ -56,14 +56,13 @@ python mac.py
 ## Project Structure
 
 ```text
- .
-├──  __pycache__
-│   └──  mac.cpython-314.pyc
-├──  assets
-│   └── 󰕙 MAC.svg
-├──  intercepted-pair.txt
-├──  mac.py
-└── 󰂺 README.md
+.
+├── assets
+│   ├── cover.png
+│   └── MAC.svg
+├── intercepted-pair.txt
+├── mac.py
+└── README.md
 ```
 
 ## Roadmap Seed
