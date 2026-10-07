@@ -2,9 +2,10 @@
 
 ![](./assets/cover.png)
 
-> Recover the **secret key** from **mac** (message authentication code).
+> MAC **Secret Key**, recovery
 
-Template repository for bootstrapping new GitHub projects with consistent structure, documentation, and workflow conventions.
+A Python cryptography challenge focused on recovering a secret key from a known message and its corresponding Message Authentication Code (MAC).
+
 
 ## Table of Contents
 
@@ -18,19 +19,24 @@ Template repository for bootstrapping new GitHub projects with consistent struct
 
 ## Overview
 
+This challenge implements a custom MAC algorithm that combines:
+
+- Character-to-number conversion;  
+- Key repetition to match the message length;  
+- XOR operations between the message and key;  
+- Mathematical operations between consecutive elements;  
+- Analysis of a known plaintext and known tag to recover the secret key 
+
 This repository is intentionally generic. Replace placeholders and keep only the sections/files that match your generated project.
 
 ### Goals
 
-- Provide a clean baseline for new repositories.
-- Keep documentation and release tracking ready from day one.
-- Preserve lightweight defaults with minimal tooling assumptions.
+The goal is to understand how the custom MAC works, identify the mathematical relationships within it, and use the intercepted data to reconstruct the original key.
 
 ## Test The Project
 
-1. On GitHub, click **Use this template**.
-2. Create a new repository from this template.
-3. Clone the generated repository:
+1. Python`3` required.
+3. Clone repository:
 
 ```bash
 git clone https://github.com/fevunge/mac_in_orbit.git
@@ -60,21 +66,19 @@ python mac.py
 └── 󰂺 README.md
 ```
 
-## Conventions
-
-- Commit style: [Conventional Commits](https://www.conventionalcommits.org/).
-- Changelog style: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
-- Versioning style: [Semantic Versioning](https://semver.org/).
-- Keep template docs abstract and reusable; avoid product-specific business logic.
-
 ## Roadmap Seed
 
-- [ ] Add `CONTRIBUTING.md` with branch and PR guidelines.
-- [ ] Add `LICENSE` with selected template default.
-- [ ] Add reusable `.github/workflows/` CI pipelines.
-- [ ] Add portable `Makefile` targets (`all`, `build`, `test`, `lint`, `clean`, `fclean`, `re`, `install`).
+- [x] Python 3
+- [ ] Bitwise Operations
+- [ ] Cryptography & Cryptanalysis
 
 ## License
 
-{{LICENSE_NAME}} (replace this section with the final license reference for generated projects).
+Copyright <2026> <fevunge>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
