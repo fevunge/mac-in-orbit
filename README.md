@@ -1,5 +1,7 @@
 # mac_in_orbit
 
+![](./assets/cover.png)
+
 > Recover the **secret key** from **mac** (message authentication code).
 
 Template repository for bootstrapping new GitHub projects with consistent structure, documentation, and workflow conventions.
