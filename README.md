@@ -41,8 +41,7 @@ python mac.py
 
 | File | Purpose |
 |---|---|
-| `mac.py` |  the reference implementation of the MAC. Put your candidate into KEY_CANDIDATE
-and run the file. |
+| `mac.py` |  the reference implementation of the MAC. Put your candidate into KEY_CANDIDATE and run the file. |
 | `intercepted-pair.txt` | command and tag, ready to copy. |
 
 
