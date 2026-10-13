@@ -1,18 +1,13 @@
 from mac import mac, check_mac
+from code_and_decode import string_to_code
+from consts import INTERCEPTED_COMMAND, INTERCEPTED_TAG, KEY_CANDIDATE
 
 if __name__ == "__main__":
-    # command = "ENERGIESPARMODUS-EIN-123456"
-    key = "123"
+    print(f"intercepted command: {INTERCEPTED_COMMAND} : {string_to_code(INTERCEPTED_COMMAND)}")
+    print(f"intercepted tag:    {INTERCEPTED_TAG}")
+    print(f"key:    {KEY_CANDIDATE} : {string_to_code(KEY_CANDIDATE)}")
 
-    # print("command:", INTERCEPTED_COMMAND)
-    print("command encoded:", string_to_code(INTERCEPTED_COMMAND))
-    print("key:    ", KEY_CANDIDATE)
-    print("key encoded:", string_to_code(KEY_CANDIDATE))
-    print("tag:    ", INTERCEPTED_TAG)
-    print("computed tag:", mac(string_to_code(INTERCEPTED_COMMAND), string_to_code(KEY_CANDIDATE)))
-
-    print()
-    print("Checking", repr(KEY_CANDIDATE), "against the intercepted pair.")
+    print("\nChecking", repr(KEY_CANDIDATE), "against the intercepted pair.")
     if check_mac(
         string_to_code(INTERCEPTED_COMMAND),
         string_to_code(KEY_CANDIDATE),
