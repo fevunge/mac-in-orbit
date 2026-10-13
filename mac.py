@@ -44,23 +44,3 @@ def check_mac(text, key, tag):
     return mac(text, key) == tag
 
 
-if __name__ == "__main__":
-    command = "ENERGIESPARMODUS-EIN-123456"
-    key = "Geheim123-456"
-
-    print("command:", command)
-    print("encoded:", string_to_code(command))
-    print("key:    ", key)
-    print("encoded:", string_to_code(key))
-    print("tag:    ", mac(string_to_code(command), string_to_code(key)))
-
-    print()
-    print("Checking", repr(KEY_CANDIDATE), "against the intercepted pair.")
-    if check_mac(
-        string_to_code(INTERCEPTED_COMMAND),
-        string_to_code(KEY_CANDIDATE),
-        INTERCEPTED_TAG,
-    ):
-        print("The key is correct.")
-    else:
-        print("The key is wrong.")
