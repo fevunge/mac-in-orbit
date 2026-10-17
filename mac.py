@@ -4,9 +4,6 @@ Put your key candidate into KEY_CANDIDATE at the bottom and run this file to
 check it against the intercepted pair.
 """
 
-from code_and_decode import string_to_code
-from consts import INTERCEPTED_COMMAND, INTERCEPTED_TAG, KEY_CANDIDATE
-
 
 def mac(text, key):
     """Compute the tag of text under key. Both are lists of character indices."""
@@ -42,5 +39,3 @@ def mac(text, key):
 def check_mac(text, key, tag):
     """Return True if key produces tag for text."""
     return mac(text, key) == tag
-
-
